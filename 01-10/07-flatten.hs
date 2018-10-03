@@ -10,7 +10,7 @@ flatten0 (List x) = concatMap flatten0 x
 
 flatten1 :: NestedList a -> [a]
 flatten1 (Elem x) = [x]
-flatten1 (List (x::xs)) = flatten1 x ++ flatten1 (List xs)
+flatten1 (List (x:xs)) = flatten1 x ++ flatten1 (List xs)
 flatten1 (List []) = []
 
 flatten2 :: NestedList a -> [a]
